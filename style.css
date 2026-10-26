@@ -1,0 +1,100 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 16px;
+  color: #222;
+}
+
+.card {
+  background: #fff;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 20px;
+  padding: 32px 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+h1 { font-size: 1.8rem; margin-bottom: 8px; }
+.subtitle { color: #666; margin-bottom: 28px; font-size: 0.95rem; }
+
+.balls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 60px;
+  margin-bottom: 28px;
+}
+
+.ball {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: inset -4px -4px 8px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.2);
+  animation: pop 0.4s ease-out both;
+}
+
+.plus { font-size: 1.5rem; font-weight: bold; color: #999; margin: 0 4px; }
+
+/* 실제 로또 공 색상 기준 */
+.yellow { background: #fbc400; }   /* 1~10 */
+.blue   { background: #69c8f2; }   /* 11~20 */
+.red    { background: #ff7272; }   /* 21~30 */
+.gray   { background: #aaaaaa; }   /* 31~40 */
+.green  { background: #b0d840; }   /* 41~45 */
+
+@keyframes pop {
+  0%   { transform: scale(0) rotate(-180deg); opacity: 0; }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+.placeholder { color: #aaa; }
+
+.controls { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.1s, background 0.2s;
+}
+button:active { transform: scale(0.96); }
+
+#drawBtn { background: #2a5298; color: #fff; }
+#drawBtn:hover { background: #1e3c72; }
+#clearBtn { background: #eee; color: #444; }
+#clearBtn:hover { background: #ddd; }
+
+.history { margin-top: 32px; text-align: left; }
+.history h2 { font-size: 1.1rem; margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+.history ol { list-style: none; }
+.history li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0;
+  flex-wrap: wrap;
+}
+.history .idx { width: 28px; color: #888; font-size: 0.9rem; }
+.history .ball { width: 32px; height: 32px; font-size: 0.85rem; animation: none; }
+.history .plus { font-size: 1rem; }
+
+.notice { margin-top: 24px; font-size: 0.8rem; color: #999; }

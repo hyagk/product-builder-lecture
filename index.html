@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로또 번호 추천기</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h1>🎱 로또 번호 추천기</h1>
+    <p class="subtitle">버튼을 누르면 1~45 중 6개 번호와 보너스 번호를 뽑아드려요</p>
+
+    <div class="balls" id="result">
+      <span class="placeholder">아직 뽑은 번호가 없어요</span>
+    </div>
+
+    <div class="controls">
+      <button id="drawBtn">번호 추천받기</button>
+      <button id="clearBtn">기록 지우기</button>
+    </div>
+
+    <div class="history">
+      <h2>추천 기록</h2>
+      <ol id="historyList"></ol>
+    </div>
+
+    <p class="notice">※ 무작위로 생성된 번호이며 당첨을 보장하지 않습니다.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
