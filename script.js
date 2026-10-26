@@ -107,3 +107,16 @@ contactForm.addEventListener("submit", async (e) => {
     submitBtn.disabled = false;
   }
 });
+
+// 댓글 (Disqus)
+var disqus_config = function () {
+  this.page.url = "https://product-builder-lecture.hstija12.workers.dev/";
+  this.page.identifier = "lotto-home";
+};
+
+(function () {
+  const s = document.createElement("script");
+  s.src = "https://productbuilder-izhgx59ezu.disqus.com/embed.js";
+  s.setAttribute("data-timestamp", +new Date());
+  (document.head || document.body).appendChild(s);
+})();

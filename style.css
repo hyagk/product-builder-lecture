@@ -122,3 +122,6 @@ button:active { transform: scale(0.96); }
 .form-status { min-height: 1.2em; font-size: 0.9rem; text-align: center; }
 .form-status.success { color: #2e8b57; }
 .form-status.error { color: #d33; }
+
+.comments { text-align: left; }
+.comments h2 { font-size: 1.5rem; margin-bottom: 16px; text-align: center; }
