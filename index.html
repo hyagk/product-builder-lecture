@@ -28,6 +28,33 @@
     <p class="notice">※ 무작위로 생성된 번호이며 당첨을 보장하지 않습니다.</p>
   </div>
 
+  <div class="card contact">
+    <h2>🤝 제휴 문의</h2>
+    <p class="subtitle">제휴 관련 문의를 남겨주시면 이메일로 답변드릴게요</p>
+
+    <form id="contactForm" action="https://formspree.io/f/xrpppenn" method="POST">
+      <label>
+        이름
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        이메일
+        <input type="email" name="email" required>
+      </label>
+      <label>
+        회사 / 단체명
+        <input type="text" name="company">
+      </label>
+      <label>
+        문의 내용
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <input type="hidden" name="_subject" value="[로또 번호 추천기] 제휴 문의">
+      <button type="submit" id="submitBtn">문의 보내기</button>
+      <p class="form-status" id="formStatus"></p>
+    </form>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

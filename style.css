@@ -5,8 +5,9 @@ body {
   background: linear-gradient(135deg, #1e3c72, #2a5298);
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
   padding: 40px 16px;
   color: #222;
 }
@@ -98,3 +99,26 @@ button:active { transform: scale(0.96); }
 .history .plus { font-size: 1rem; }
 
 .notice { margin-top: 24px; font-size: 0.8rem; color: #999; }
+
+.contact h2 { font-size: 1.5rem; margin-bottom: 8px; }
+.contact form { display: flex; flex-direction: column; gap: 14px; text-align: left; }
+.contact label { display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; font-weight: bold; color: #444; }
+.contact input,
+.contact textarea {
+  font: inherit;
+  font-weight: normal;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  resize: vertical;
+}
+.contact input:focus,
+.contact textarea:focus { outline: none; border-color: #2a5298; }
+
+#submitBtn { background: #2a5298; color: #fff; margin-top: 4px; }
+#submitBtn:hover { background: #1e3c72; }
+#submitBtn:disabled { background: #999; cursor: default; }
+
+.form-status { min-height: 1.2em; font-size: 0.9rem; text-align: center; }
+.form-status.success { color: #2e8b57; }
+.form-status.error { color: #d33; }

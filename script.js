@@ -78,3 +78,32 @@ clearBtn.addEventListener("click", () => {
   resultEl.innerHTML = '<span class="placeholder">아직 뽑은 번호가 없어요</span>';
   count = 0;
 });
+
+// 제휴 문의 폼 (Formspree)
+const contactForm = document.getElementById("contactForm");
+const submitBtn = document.getElementById("submitBtn");
+const formStatus = document.getElementById("formStatus");
+
+contactForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  submitBtn.disabled = true;
+  formStatus.className = "form-status";
+  formStatus.textContent = "보내는 중...";
+
+  try {
+    const res = await fetch(contactForm.action, {
+      method: "POST",
+      body: new FormData(contactForm),
+      headers: { Accept: "application/json" },
+    });
+    if (!res.ok) throw new Error();
+    contactForm.reset();
+    formStatus.classList.add("success");
+    formStatus.textContent = "문의가 접수되었어요. 감사합니다!";
+  } catch {
+    formStatus.classList.add("error");
+    formStatus.textContent = "전송에 실패했어요. 잠시 후 다시 시도해주세요.";
+  } finally {
+    submitBtn.disabled = false;
+  }
+});
