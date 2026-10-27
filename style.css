@@ -125,3 +125,47 @@ button:active { transform: scale(0.96); }
 
 .comments { text-align: left; }
 .comments h2 { font-size: 1.5rem; margin-bottom: 16px; text-align: center; }
+
+html { scroll-behavior: smooth; }
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 520px;
+}
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+}
+.nav a:hover { background: rgba(255, 255, 255, 0.3); }
+
+.guide { text-align: left; line-height: 1.7; }
+.guide h2 { font-size: 1.5rem; margin-bottom: 16px; text-align: center; }
+.guide h3 { font-size: 1.05rem; margin: 20px 0 8px; }
+.guide p { font-size: 0.95rem; color: #444; margin-bottom: 8px; }
+
+.odds { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 8px 0 12px; }
+.odds th, .odds td { padding: 8px 6px; border-bottom: 1px solid #eee; text-align: left; }
+.odds th { background: #f5f7fb; }
+.odds td:last-child { white-space: nowrap; }
+
+.legend { list-style: none; display: flex; flex-wrap: wrap; gap: 12px; margin: 8px 0; }
+.legend li { display: flex; align-items: center; gap: 6px; font-size: 0.9rem; }
+.legend .ball { width: 28px; height: 28px; font-size: 0.75rem; animation: none; }
+
+.footer {
+  width: 100%;
+  max-width: 520px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  text-align: center;
+}
+.footer p + p { margin-top: 6px; }

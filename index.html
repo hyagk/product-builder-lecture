@@ -3,11 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>로또 번호 추천기</title>
+  <title>로또 번호 추천기 - 1~45 무작위 번호 생성과 당첨 확률 안내</title>
+  <meta name="description" content="버튼 한 번으로 로또 6/45 번호 6개와 보너스 번호를 공정하게 무작위로 뽑아드립니다. 번호 생성 방식, 등수별 당첨 확률, 공 색상 기준까지 함께 안내합니다.">
+  <link rel="canonical" href="https://product-builder-lecture.hstija12.workers.dev/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="로또 번호 추천기">
+  <meta property="og:description" content="1~45 중 6개 번호와 보너스 번호를 무작위로 뽑고, 등수별 당첨 확률도 확인해 보세요.">
+  <meta property="og:url" content="https://product-builder-lecture.hstija12.workers.dev/">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="card">
+  <nav class="nav">
+    <a href="#draw">번호 뽑기</a>
+    <a href="#guide">이용 안내</a>
+    <a href="#contact">제휴 문의</a>
+    <a href="#comments">댓글</a>
+  </nav>
+
+  <div class="card" id="draw">
     <h1>🎱 로또 번호 추천기</h1>
     <p class="subtitle">버튼을 누르면 1~45 중 6개 번호와 보너스 번호를 뽑아드려요</p>
 
@@ -28,7 +41,48 @@
     <p class="notice">※ 무작위로 생성된 번호이며 당첨을 보장하지 않습니다.</p>
   </div>
 
-  <div class="card contact">
+  <div class="card guide" id="guide">
+    <h2>📖 이용 안내</h2>
+
+    <h3>번호는 어떻게 뽑나요?</h3>
+    <p>
+      1부터 45까지 45개의 번호를 <strong>피셔-예이츠(Fisher-Yates) 셔플</strong>로 고르게 섞은 뒤,
+      앞의 6개를 본번호로, 7번째를 보너스 번호로 사용합니다. 모든 번호가 뽑힐 확률은 똑같고,
+      과거 당첨 번호나 특정 패턴을 반영하지 않는 순수한 무작위 방식입니다.
+      뽑은 번호는 서버로 전송되거나 저장되지 않고, 새로고침하면 기록도 사라집니다.
+    </p>
+
+    <h3>등수별 당첨 확률</h3>
+    <p>로또 6/45의 전체 조합 수는 8,145,060가지입니다. 한 게임 기준 확률은 다음과 같습니다.</p>
+    <table class="odds">
+      <thead>
+        <tr><th>등수</th><th>당첨 조건</th><th>확률</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1등</td><td>6개 번호 일치</td><td>1 / 8,145,060</td></tr>
+        <tr><td>2등</td><td>5개 + 보너스 번호 일치</td><td>1 / 1,357,510</td></tr>
+        <tr><td>3등</td><td>5개 번호 일치</td><td>1 / 35,724</td></tr>
+        <tr><td>4등</td><td>4개 번호 일치</td><td>1 / 733</td></tr>
+        <tr><td>5등</td><td>3개 번호 일치</td><td>1 / 45</td></tr>
+      </tbody>
+    </table>
+    <p>
+      "자주 나온 번호"나 "연속 번호를 피하는 조합"도 당첨 확률은 다른 조합과 같습니다.
+      어떤 조합이든 1등 확률은 약 814만 분의 1이니, 재미로만 즐겨주세요.
+    </p>
+
+    <h3>공 색상은 무엇을 뜻하나요?</h3>
+    <ul class="legend">
+      <li><span class="ball yellow">1</span> 1~10</li>
+      <li><span class="ball blue">11</span> 11~20</li>
+      <li><span class="ball red">21</span> 21~30</li>
+      <li><span class="ball gray">31</span> 31~40</li>
+      <li><span class="ball green">41</span> 41~45</li>
+    </ul>
+    <p>실제 로또 추첨 방송에서 쓰는 공 색상 구간과 같습니다.</p>
+  </div>
+
+  <div class="card contact" id="contact">
     <h2>🤝 제휴 문의</h2>
     <p class="subtitle">제휴 관련 문의를 남겨주시면 이메일로 답변드릴게요</p>
 
@@ -55,11 +109,20 @@
     </form>
   </div>
 
-  <div class="card comments">
+  <div class="card comments" id="comments">
     <h2>💬 댓글</h2>
     <div id="disqus_thread"></div>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </div>
+
+  <footer class="footer">
+    <p>
+      <strong>개인정보 처리 안내</strong> ·
+      제휴 문의 폼에 입력한 이름·이메일·문의 내용은 답변을 위해서만 사용되며 Formspree를 통해 전달됩니다.
+      댓글은 Disqus에서 관리되며 Disqus의 개인정보 처리방침을 따릅니다.
+    </p>
+    <p>© 2026 로또 번호 추천기</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
